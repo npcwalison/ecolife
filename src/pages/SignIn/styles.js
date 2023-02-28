@@ -7,7 +7,10 @@ export const Container = styled.View`
     align-items: center;
 `;
 
-export const Logo = styled.Image``;
+export const Logo = styled.Image`
+    width: 200px;
+    height: 200px;
+`;
 
 export const Text = styled.Text`
     color: #222;
