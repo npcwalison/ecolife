@@ -1,18 +1,22 @@
 import {
-    View,
+    Container,
+    Logo,
     Text,
     Button
 } from './styles';
 
 
-export default function SignIn({ navigation, screenName }) {
+export default function SignIn({ navigation }) {
     return (
-        <View>
+        <Container>
+            <Logo
+                source={require('../../assets/Logo.png')}
+            />
             <Text>SignIn</Text>
             <Button
-                title={`Go to ${screenName}`}
+                title={`Go`}
                 onPress={() => navigation.navigate('SignUp')}
             />
-        </View>
+        </Container>
     )
 }
