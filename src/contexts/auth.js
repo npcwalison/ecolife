@@ -9,14 +9,13 @@ import api from '../services/api';
 
 
 function AuthProvider({ children }){
-    const [user, setUser] = useState({
-        name: "Matheus"
-    });
+    const [user, setUser] = useState(null);
+    const [loadingAuth, setLoadingAuth] = useState(false);
 
     const navigation = useNavigation();
 
     async function signUp(name, email, password){
-        console.log(`${name}\n${email}\n${password}`)
+        setLoadingAuth(true);
         try{
             const response = await api.post('/users', {
                 name: name,
@@ -24,14 +23,16 @@ function AuthProvider({ children }){
                 password: password
             })
 
+            setLoadingAuth(false);
             navigation.goBack()
         }catch(err){
             console.log(`Error Cadastro: ${err}`)
+            setLoadingAuth(false);
         }
     }
 
     return(
-        <AuthContext.Provider value={{ user, signUp }}>
+        <AuthContext.Provider value={{ user, signUp, loadingAuth }}>
             {children}
         </AuthContext.Provider>
     )

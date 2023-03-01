@@ -1,5 +1,5 @@
 import { useState, useContext } from 'react';
-import { Platform } from 'react-native';
+import { Platform, ActivityIndicator } from 'react-native';
 import {
     Background,
     Container,
@@ -15,7 +15,7 @@ import { AuthContext } from '../../contexts/auth';
 
 export default function SignUp({ navigation }) {
 
-    const { signUp } = useContext(AuthContext)
+    const { signUp, loadingAuth } = useContext(AuthContext)
 
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
@@ -58,7 +58,13 @@ export default function SignUp({ navigation }) {
                 <Button
                     onPress={eventLogin}
                     activeOpacity={0.8}
-                ><ButtonText>Criar Conta</ButtonText></Button>
+                >
+                    {
+                        loadingAuth? (
+                            <ActivityIndicator size={20} color="#fff"/>
+                        ):<ButtonText>Criar Conta</ButtonText>
+                    }
+                </Button>
             </Container>
         </Background>
     )
