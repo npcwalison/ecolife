@@ -2,11 +2,12 @@ import { useState } from 'react';
 import {
     Container,
     Logo,
-    Text,
     InputArea,
     Input,
     Button,
-    Link
+    ButtonText,
+    Link,
+    LinkText
 } from './styles';
 
 
@@ -22,7 +23,6 @@ export default function SignIn({ navigation }) {
             <Logo
                 source={require('../../assets/Logo.png')}
             />
-            <Text>SignIn</Text>
             <InputArea>
                 <Input
                     placeholder="Insira seu email"
@@ -40,10 +40,10 @@ export default function SignIn({ navigation }) {
             </InputArea>
             <Button
                 onPress={eventLogin}
-            ><Text>Acessar</Text></Button>
+            ><ButtonText>Acessar</ButtonText></Button>
             <Link
                 onPress={() => navigation.navigate('SignUp')}
-            ><Text>Ainda não possuo uma conta</Text></Link>
+            ><LinkText>Ainda não possuo uma conta</LinkText></Link>
         </Container>
     )
 }
