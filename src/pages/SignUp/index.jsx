@@ -22,6 +22,10 @@ export default function SignUp({ navigation }) {
     const [password, setPassword] = useState('')
 
     function eventLogin() {
+        if(name === '' || email === '' || password === '') {
+            alert("Preencha todos os campos!")
+            return;
+        };
         signUp(name, email, password)
     }
     return (
