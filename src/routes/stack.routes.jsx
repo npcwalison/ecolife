@@ -17,6 +17,16 @@ export default function StackRoutes() {
         component={SignIn}
       />
       <Stack.Screen
+        options={{
+          headerStyle: {
+            backgroundColor: "#353566",
+            borderBottomWith: 1,
+            borderBottomColor: "#222"
+          },
+          headerTintColor: '#fff',
+          headerTitle: 'Voltar',
+          headerBackTitleVisible: false
+        }}
         name="SignUp"
         component={SignUp}
       />

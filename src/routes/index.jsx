@@ -1,8 +1,8 @@
-import StackRoutes from '../routes/stack.routes';
+import StackRoutes from './stack.routes';
 import Home from '../pages/Home';
 
 
-export default function Auth() {
+export default function Routes() {
     const loading = false;
     const loginAuth = false;
 

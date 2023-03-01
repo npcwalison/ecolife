@@ -1,5 +1,7 @@
 import { useState } from 'react';
+import { Platform } from 'react-native';
 import {
+    Background,
     Container,
     Logo,
     InputArea,
@@ -19,31 +21,37 @@ export default function SignIn({ navigation }) {
         return alert('Logado')
     }
     return (
-        <Container>
-            <Logo
-                source={require('../../assets/Logo.png')}
-            />
-            <InputArea>
-                <Input
-                    placeholder="Insira seu email"
-                    value={email}
-                    onChangeText={value => setEmail(value)}
+        <Background>
+            <Container
+                behavior={Platform.OS === 'ios' ? 'padding' : ''}
+                enabled
+            >
+                <Logo
+                    source={require('../../assets/Logo.png')}
                 />
-            </InputArea>
-            <InputArea>
-                <Input
-                    placeholder="Insira sua senha"
-                    value={password}
-                    secureTextEntry={true}
-                    onChangeText={value => setPassword(value)}
-                />
-            </InputArea>
-            <Button
-                onPress={eventLogin}
-            ><ButtonText>Acessar</ButtonText></Button>
-            <Link
-                onPress={() => navigation.navigate('SignUp')}
-            ><LinkText>Ainda não possuo uma conta</LinkText></Link>
-        </Container>
+                <InputArea>
+                    <Input
+                        placeholder="Insira seu email"
+                        value={email}
+                        onChangeText={value => setEmail(value)}
+                    />
+                </InputArea>
+                <InputArea>
+                    <Input
+                        placeholder="Insira sua senha"
+                        value={password}
+                        secureTextEntry={true}
+                        onChangeText={value => setPassword(value)}
+                    />
+                </InputArea>
+                <Button
+                    onPress={eventLogin}
+                    activeOpacity={0.8}
+                ><ButtonText>Acessar</ButtonText></Button>
+                <Link
+                    onPress={() => navigation.navigate('SignUp')}
+                ><LinkText>Ainda não possuo uma conta</LinkText></Link>
+            </Container>
+        </Background>
     )
 }
