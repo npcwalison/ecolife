@@ -1,14 +1,14 @@
 import StackRoutes from './stack.routes';
-import Home from '../pages/Home';
+import DrawerRoutes from './drawer.routes';
 
 
 export default function Routes() {
     const loading = false;
-    const loginAuth = false;
+    const loginAuth = true;
 
 
     return (
         //the user is logged in? (yes/no)
-        loginAuth? <Home /> : <StackRoutes />
+        loginAuth? <DrawerRoutes /> : <StackRoutes />
     )
 }
