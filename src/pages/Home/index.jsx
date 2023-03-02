@@ -1,6 +1,6 @@
 //import { useContext } from 'react';
 import {
-    View,
+    Container,
     Text
 } from './styles';
 
@@ -12,8 +12,8 @@ export default function Home() {
     //const { user } = useContext(AuthContext)
 
     return (
-        <View>
+        <Container>
             <Text>Home</Text>
-        </View>
+        </Container>
     )
 }
