@@ -1,5 +1,6 @@
 import StackRoutes from './stack.routes';
 import DrawerRoutes from './drawer.routes';
+import Home from '../pages/Home';
 
 
 export default function Routes() {

@@ -10,5 +10,3 @@ export const View = styled.View`
 export const Text = styled.Text`
     color: #222;
 `;
-
-export const Button = styled.Button``;

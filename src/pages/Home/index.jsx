@@ -1,8 +1,7 @@
 //import { useContext } from 'react';
 import {
     View,
-    Text,
-    Button
+    Text
 } from './styles';
 
 //import { AuthContext } from '../../contexts/auth';
