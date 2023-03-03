@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 
 
 export const  AuthContext = createContext({});
@@ -14,6 +14,33 @@ function AuthProvider({ children }){
     const [loadingAuth, setLoadingAuth] = useState(false);
 
     const navigation = useNavigation();
+
+    useEffect(()=>{
+        async function loadStorage(){
+            const storageUser = await AsyncStorage.getItem('@EcoApp');
+            //console.log(storageUser)
+
+            if(storageUser){
+                const response = api.get('/me', {
+                    headers: {
+                        'Authorization' : `Bearer ${storageUser}`
+                    }
+                })
+                .catch(()=>{
+                    setUser(null)
+                })
+
+                api.defaults.headers['Authorization'] = `Bearer ${storageUser}`;
+                setUser(response.data)
+
+                console.log(response)
+            }
+        }
+
+        loadStorage()
+
+    }, [])
+
 
     async function signUp(name, email, password){
         setLoadingAuth(true);
