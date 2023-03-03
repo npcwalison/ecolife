@@ -27,7 +27,7 @@ export default function SignIn({ navigation }) {
                 enabled
             >
                 <Logo
-                    source={require('../../assets/Logo.png')}
+                    source={require('../../assets/logo.png')}
                 />
                 <InputArea>
                     <Input
