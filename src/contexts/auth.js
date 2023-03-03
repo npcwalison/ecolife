@@ -7,6 +7,7 @@ import { useNavigation } from "@react-navigation/native";
 
 import api from '../services/api';
 
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function AuthProvider({ children }){
     const [user, setUser] = useState(null);
@@ -47,8 +48,11 @@ function AuthProvider({ children }){
                 token,
                 email,
             }
+            
+            await AsyncStorage.setItem('@EcoApp', token)
 
             api.defaults.headers['Authorization'] = `Bearer ${token}`;
+
 
             setUser({
                 id,
