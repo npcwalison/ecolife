@@ -8,8 +8,11 @@ import {
     CodeCard,
     CardDataContainer,
     CardData,
-    NameCard
+    NameCard,
     //banner
+    Banner,
+    TextMoney,
+    ValorMoney
 } from './styles';
 
 //import { AuthContext } from '../../contexts/auth';
@@ -33,6 +36,10 @@ export default function Home() {
                 </CardDataContainer>
                 <NameCard>Guilherme Santana</NameCard>
             </Card>
+            <Banner>
+                <TextMoney>Valor atual</TextMoney>
+                <ValorMoney>R$: 33,45</ValorMoney>
+            </Banner>
         </Container>
     )
 }

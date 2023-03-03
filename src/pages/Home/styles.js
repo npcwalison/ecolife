@@ -51,4 +51,25 @@ export const NameCard = styled.Text`
     text-transform: uppercase;
 `;
 //banner
+export const Banner = styled.View`
+    width: 323.52px;
+    height: 60px;
+    padding: 10px 30px;
+    background-color: #35356677;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+`;
+export const TextMoney = styled.Text`
+    font-size: 16px;
+    color: #fff;
+`;
+export const ValorMoney = styled.Text`
+    font-size: 20px;
+    color: #fff;
+`;
 //trasações
