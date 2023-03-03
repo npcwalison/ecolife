@@ -6,6 +6,7 @@ export const Container = styled.View`
     align-items: center;
     background: #121222;
 `;
+
 //CARD
 export const Card = styled.View`
     width: 323.52px;
@@ -19,10 +20,9 @@ export const Bank = styled.Text`
     color: #fff;
     font-weight: 800;
 `;
-export const Chip = styled.View`
+export const Chip = styled.Image`
     width: 56.69px;
     height: 45.35px;
-    background-color: #ff0;
     border-radius: 8px;
     margin-top: 35px;
 `;

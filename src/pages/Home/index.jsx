@@ -9,6 +9,7 @@ import {
     CardDataContainer,
     CardData,
     NameCard
+    //banner
 } from './styles';
 
 //import { AuthContext } from '../../contexts/auth';
@@ -22,7 +23,9 @@ export default function Home() {
         <Container>
             <Card>
                 <Bank>ECOLIFE</Bank>
-                <Chip></Chip>
+                <Chip
+                    source={require('../../assets/chip.png')}
+                />
                 <CodeCard>2344 2342 3242 2342</CodeCard>
                 <CardDataContainer>
                     <CardData>564</CardData>
