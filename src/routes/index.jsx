@@ -1,14 +1,31 @@
 import StackRoutes from './stack.routes';
 import DrawerRoutes from './drawer.routes';
 
+import { useContext } from 'react';
+import { View, ActivityIndicator } from 'react-native';
+import { AuthContext } from '../contexts/auth';
+
 
 export default function Routes() {
-    const loading = false;
-    const loginAuth = false;
+    const { user, loading } = useContext(AuthContext);
 
+    //console.log(`routes: ${user}`)
 
-    return (
-        //the user is logged in? (yes/no)
-        loginAuth? <DrawerRoutes /> : <StackRoutes />
-    )
+    if(loading){
+        return(
+          <View 
+          style={{
+            flex:1,
+            justifyContent: 'center',
+            alignItems: 'center',
+            backgroundColor: '#F0F4FF'
+          }}>
+            <ActivityIndicator size="large" color="#131313" />
+          </View>
+        )
+      }
+    
+      return(
+        user ? <DrawerRoutes/> : <StackRoutes/>
+      )
 }

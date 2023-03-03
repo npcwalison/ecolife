@@ -39,7 +39,7 @@ function AuthProvider({ children }){
                 password: password
             })
 
-            const { id, name, token } =response.data;
+            const { id, name, token } = response.data;
 
             const data ={
                 id,
@@ -55,6 +55,8 @@ function AuthProvider({ children }){
                 name,
                 email,
             })
+
+            //console.log(`auth: ${user}`)
 
             setLoadingAuth(false);
         }catch(err){
