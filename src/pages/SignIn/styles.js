@@ -24,7 +24,7 @@ export const InputArea = styled.View`
     `;
 // attrs is used to change the placeholder color
 export const Input = styled.TextInput.attrs({
-    placeholderTextColor: "#fff"
+    placeholderTextColor: "#fff",
   })`
     font-size: 14px;
     padding: 10px;
@@ -33,7 +33,8 @@ export const Input = styled.TextInput.attrs({
     border-radius: 4px;
     width: 100%;
     background-color: #353566;
-    `;
+    color:#fff;
+`;
 
 export const Button = styled.TouchableOpacity`
     width: 96%;
