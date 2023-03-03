@@ -7,7 +7,7 @@ import { AuthContext } from '../contexts/auth';
 
 
 export default function Routes() {
-    const { user, loading } = useContext(AuthContext);
+    const { signed, loading } = useContext(AuthContext);
 
     //console.log(`routes: ${user}`)
 
@@ -26,6 +26,6 @@ export default function Routes() {
       }
     
       return(
-        user ? <DrawerRoutes/> : <StackRoutes/>
+        signed ? <DrawerRoutes/> : <StackRoutes/>
       )
 }
