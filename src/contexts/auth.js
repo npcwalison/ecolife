@@ -12,6 +12,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 function AuthProvider({ children }){
     const [user, setUser] = useState(null);
     const [loadingAuth, setLoadingAuth] = useState(false);
+    const [loadingApp, setLoadingApp] = useState(true)
 
     const navigation = useNavigation();
 
@@ -19,7 +20,7 @@ function AuthProvider({ children }){
         async function loadStorage(){
             const storageUser = await AsyncStorage.getItem('@EcoApp');
 
-            console.log(`storageUser: ${storageUser}`)
+            //console.log(`storageUser: ${storageUser}`)
 
             if(storageUser){
 
@@ -34,9 +35,11 @@ function AuthProvider({ children }){
 
                 api.defaults.headers['Authorization'] = `Bearer ${storageUser}`;
                 setUser(response.data)
+                setLoadingApp(false)
 
-                console.log(`response: ${response}`)
+                //console.log(`response: ${response}`)
             }
+            setLoadingApp(false)
         }
 
         loadStorage()
@@ -99,7 +102,7 @@ function AuthProvider({ children }){
     }
 
     return(
-        <AuthContext.Provider value={{ signed: !!user, signUp, loadingAuth, signIn }}>
+        <AuthContext.Provider value={{ signed: !!user, signUp, loadingAuth, signIn, loadingApp }}>
             {children}
         </AuthContext.Provider>
     )

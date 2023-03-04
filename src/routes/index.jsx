@@ -7,20 +7,20 @@ import { AuthContext } from '../contexts/auth';
 
 
 export default function Routes() {
-    const { signed, loading } = useContext(AuthContext);
+    const { signed, loadingApp } = useContext(AuthContext);
 
     //console.log(`routes: ${user}`)
 
-    if(loading){
+    if(loadingApp){
         return(
           <View 
           style={{
             flex:1,
             justifyContent: 'center',
             alignItems: 'center',
-            backgroundColor: '#F0F4FF'
+            backgroundColor: '#121222'
           }}>
-            <ActivityIndicator size="large" color="#131313" />
+            <ActivityIndicator size="large" color="#fff" />
           </View>
         )
       }
