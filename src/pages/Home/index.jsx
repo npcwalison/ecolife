@@ -14,6 +14,7 @@ import {
 } from './styles';
 
 import { AuthContext } from '../../contexts/auth';
+import Header from '../../fragments/Header';
 
 
 export default function Home() {
@@ -26,6 +27,7 @@ export default function Home() {
 
     return (
         <Container>
+            <Header title="Minhas Movimentações"/>
             <Card>
                 <Bank>ECOLIFE</Bank>
                 <Chip
