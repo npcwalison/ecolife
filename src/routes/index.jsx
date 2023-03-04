@@ -2,7 +2,8 @@ import StackRoutes from './stack.routes';
 import DrawerRoutes from './drawer.routes';
 
 import { useContext } from 'react';
-import { View, ActivityIndicator } from 'react-native';
+import { ActivityIndicator } from 'react-native';
+import styled from 'styled-components';
 import { AuthContext } from '../contexts/auth';
 
 
@@ -13,15 +14,9 @@ export default function Routes() {
 
     if(loadingApp){
         return(
-          <View 
-          style={{
-            flex:1,
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#121222'
-          }}>
+          <Container>
             <ActivityIndicator size="large" color="#fff" />
-          </View>
+          </Container>
         )
       }
     
@@ -29,3 +24,12 @@ export default function Routes() {
         signed ? <DrawerRoutes/> : <StackRoutes/>
       )
 }
+
+export const Container = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #121222;
+`;
+
+
