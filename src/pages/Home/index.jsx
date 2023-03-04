@@ -1,4 +1,4 @@
-//import { useContext } from 'react';
+import { useContext } from 'react';
 import {
     Container,
     //card-attributes
@@ -10,17 +10,19 @@ import {
     CardData,
     NameCard,
     //banner
-    Banner,
-    TextMoney,
-    ValorMoney
+    Button, Text
 } from './styles';
 
-//import { AuthContext } from '../../contexts/auth';
+import { AuthContext } from '../../contexts/auth';
 
 
 export default function Home() {
 
-    //const { user } = useContext(AuthContext)
+    const { user, signOut  } = useContext(AuthContext)
+
+    function logout(){
+        signOut()
+    }
 
     return (
         <Container>
@@ -29,17 +31,17 @@ export default function Home() {
                 <Chip
                     source={require('../../assets/chip.png')}
                 />
-                <CodeCard>2344 2342 3242 2342</CodeCard>
                 <CardDataContainer>
-                    <CardData>564</CardData>
-                    <CardData>05/25</CardData>
+                    <CardData>Valor Atual:</CardData>
+                    <CardData>R$ 12,22</CardData>
                 </CardDataContainer>
-                <NameCard>Guilherme Santana</NameCard>
+                <NameCard>{user.name}</NameCard>
             </Card>
-            <Banner>
-                <TextMoney>Valor atual</TextMoney>
-                <ValorMoney>R$: 33,45</ValorMoney>
-            </Banner>
+            <Button
+                onPress={()=> logout()}
+            >
+                <Text>Logout</Text>
+            </Button>
         </Container>
     )
 }

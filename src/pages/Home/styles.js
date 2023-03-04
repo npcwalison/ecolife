@@ -26,50 +26,38 @@ export const Chip = styled.Image`
     border-radius: 8px;
     margin-top: 35px;
 `;
-export const CodeCard = styled.Text`
-    font-size: 20px;
-    margin-top: 8px;
-    color: #fff;
-`;
 
 export const CardDataContainer = styled.View`
     color: #fff;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 10px;
 `;
 
 export const CardData = styled.Text`
     color: #fff;
-    font-size: 14px;
-    margin-top: 2px;
+    font-size: 18px;
 `;
 export const NameCard = styled.Text`
     color: #fff;
     font-size: 18px;
-    margin-top: 2px;
     text-transform: uppercase;
-`;
-//banner
-export const Banner = styled.View`
-    width: 323.52px;
-    height: 60px;
-    padding: 10px 30px;
-    background-color: #35356677;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-`;
-export const TextMoney = styled.Text`
-    font-size: 16px;
-    color: #fff;
-`;
-export const ValorMoney = styled.Text`
-    font-size: 20px;
-    color: #fff;
+    margin-top: 10px;
 `;
 //trasações
+
+
+export const Button = styled.TouchableOpacity`
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f15104;
+    border-radius: 8px;
+`;
+
+export const Text = styled.Text`
+    color: #fff;
+    padding: 10px 20px;
+`;

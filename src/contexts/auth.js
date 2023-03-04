@@ -46,7 +46,7 @@ function AuthProvider({ children }){
 
     }, [])
 
-
+//--------------------------------------------------------------
     async function signUp(name, email, password){
         setLoadingAuth(true);
         try{
@@ -64,6 +64,7 @@ function AuthProvider({ children }){
         }
     }
 
+//---------------------------------------------------------------
     async function signIn(email, password){
         setLoadingAuth(true);
         try{
@@ -100,9 +101,17 @@ function AuthProvider({ children }){
             setLoadingAuth(false);
         }
     }
+    
+
+    async function signOut(){
+        await AsyncStorage.clear()
+        .then(()=>{
+            setUser(null)
+        })
+    }
 
     return(
-        <AuthContext.Provider value={{ signed: !!user, signUp, loadingAuth, signIn, loadingApp }}>
+        <AuthContext.Provider value={{ signed: !!user, user, signUp, loadingAuth, signIn, loadingApp, signOut }}>
             {children}
         </AuthContext.Provider>
     )
