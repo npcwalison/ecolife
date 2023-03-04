@@ -18,10 +18,12 @@ function AuthProvider({ children }){
     useEffect(()=>{
         async function loadStorage(){
             const storageUser = await AsyncStorage.getItem('@EcoApp');
-            //console.log(storageUser)
+
+            console.log(`storageUser: ${storageUser}`)
 
             if(storageUser){
-                const response = api.get('/me', {
+
+                const response = await api.get('/me', {
                     headers: {
                         'Authorization' : `Bearer ${storageUser}`
                     }
@@ -33,7 +35,7 @@ function AuthProvider({ children }){
                 api.defaults.headers['Authorization'] = `Bearer ${storageUser}`;
                 setUser(response.data)
 
-                console.log(response)
+                console.log(`response: ${response}`)
             }
         }
 
