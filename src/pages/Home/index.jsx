@@ -9,8 +9,6 @@ import {
     CardDataContainer,
     CardData,
     NameCard,
-    //banner
-    Button, Text
 } from './styles';
 
 import { AuthContext } from '../../contexts/auth';
@@ -19,11 +17,7 @@ import Header from '../../fragments/Header';
 
 export default function Home() {
 
-    const { user, signOut  } = useContext(AuthContext)
-
-    function logout(){
-        signOut()
-    }
+    const { user } = useContext(AuthContext)
 
     return (
         <Container>
@@ -39,11 +33,6 @@ export default function Home() {
                 </CardDataContainer>
                 <NameCard>{user.name}</NameCard>
             </Card>
-            <Button
-                onPress={()=> logout()}
-            >
-                <Text>Logout</Text>
-            </Button>
         </Container>
     )
 }

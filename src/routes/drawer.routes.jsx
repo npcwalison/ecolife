@@ -4,6 +4,7 @@ import { createDrawerNavigator } from "@react-navigation/drawer";
 const AppDrawer = createDrawerNavigator();
 
 import Home from '../pages/Home';
+import Logout from "../pages/Logout";
 
 export default function DrawerRoutes() {
     return (
@@ -19,8 +20,8 @@ export default function DrawerRoutes() {
                 drawerActiveBackgroundColor: "#f15104",
                 drawerActiveTintColor: "#fff",
 
-                drawerInactiveBackgroundColor: "#F0F2FF",
-                drawerInactiveTintColor: "#121222"
+                drawerInactiveBackgroundColor: "#353566",
+                drawerInactiveTintColor: "#fff"
             }}
         >
             <AppDrawer.Screen
@@ -35,6 +36,19 @@ export default function DrawerRoutes() {
                 }}
                 name="Home"
                 component={Home}
+            />
+            <AppDrawer.Screen
+                options={{
+                    headerStyle: {
+                        backgroundColor: "#353566",
+                        borderBottomColor: "#222"
+                    },
+                    headerTintColor: '#fff',
+                    headerTitle: '',
+                    headerBackTitleVisible: false
+                }}
+                name="Logout"
+                component={Logout}
             />
         </AppDrawer.Navigator>
     )

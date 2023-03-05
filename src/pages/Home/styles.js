@@ -45,19 +45,3 @@ export const NameCard = styled.Text`
     text-transform: uppercase;
     margin-top: 10px;
 `;
-//trasações
-
-
-export const Button = styled.TouchableOpacity`
-    margin-top: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f15104;
-    border-radius: 8px;
-`;
-
-export const Text = styled.Text`
-    color: #fff;
-    padding: 10px 20px;
-`;
