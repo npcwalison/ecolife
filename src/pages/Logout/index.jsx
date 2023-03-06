@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import {
     Container,
+    ViewCard,
     Button,
     Text
 } from './styles';
@@ -19,7 +20,8 @@ export default function Logout() {
 
     return (
         <Container>
-            <Header title="Minhas Movimentações"/>
+            <Header title="Usuario"/>
+            <ViewCard></ViewCard>
             <Button
                 onPress={()=> logoutEvent()}
             >
