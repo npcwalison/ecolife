@@ -110,8 +110,13 @@ function AuthProvider({ children }){
         })
     }
 
+
+    async function register(labelInput, valueInput){
+        console.log(labelInput, valueInput)
+    }
+
     return(
-        <AuthContext.Provider value={{ signed: !!user, user, signUp, loadingAuth, signIn, loadingApp, signOut }}>
+        <AuthContext.Provider value={{ signed: !!user, user, signUp, loadingAuth, signIn, loadingApp, signOut, register }}>
             {children}
         </AuthContext.Provider>
     )

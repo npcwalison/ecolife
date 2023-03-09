@@ -5,6 +5,7 @@ const AppDrawer = createDrawerNavigator();
 
 import Home from '../pages/Home';
 import Logout from "../pages/Logout";
+import New from "../pages/New";
 
 export default function DrawerRoutes() {
     return (
@@ -36,6 +37,19 @@ export default function DrawerRoutes() {
                 }}
                 name="Home"
                 component={Home}
+            />
+            <AppDrawer.Screen
+                options={{
+                    headerStyle: {
+                        backgroundColor: "#353566",
+                        borderBottomColor: "#222"
+                    },
+                    headerTintColor: '#fff',
+                    headerTitle: '',
+                    headerBackTitleVisible: false
+                }}
+                name="New"
+                component={New}
             />
             <AppDrawer.Screen
                 options={{
