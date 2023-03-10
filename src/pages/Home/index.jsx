@@ -29,7 +29,7 @@ export default function Home() {
 
     const [dateMovements, setDateMovements] = useState(new Date())
 
-
+    
     async function handleDelete(id){
         //console.log('deletado com sucesso' + id)
         try{
@@ -44,7 +44,7 @@ export default function Home() {
             console.log(`erro delete: ${err}`)
         }
     }
-
+    //carregando dados
     useEffect(()=>{
         let isActive = true;
 
