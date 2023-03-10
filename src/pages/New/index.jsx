@@ -11,6 +11,7 @@ import {
 
 import { AuthContext } from '../../contexts/auth';
 import Header from '../../fragments/Header';
+import RegisterTypes from '../../fragments/RegisterTypes';
 
 
 export default function New() {
@@ -18,7 +19,7 @@ export default function New() {
 
     const [labelInput, setLabelInput] = useState('')
     const [valueInput, setValueInput] = useState('')
-    const [type, setType] = useState('receitas')
+    const [type, setType] = useState('receita')
 
     function sendData(){
         register(labelInput, valueInput)
@@ -39,6 +40,7 @@ export default function New() {
                         value={valueInput}
                         onChangeText={(text)=> setValueInput(text)}
                     />
+                    <RegisterTypes type={type} sendTypeChanged={ (item) => setType(item)}/>
                     <Button onPress={()=> sendData()}>
                         <ButtonText>Registrar</ButtonText>
                     </Button>
