@@ -11,7 +11,7 @@ import Icon from "react-native-vector-icons/Feather";
 
 
 
-export default function StoryList({ data }) {
+export default function StoryList({ data, handleDelete }) {
     const colorType = useMemo(()=> {
         if(data.type === 'receita') {
             return 'green'
@@ -43,7 +43,7 @@ export default function StoryList({ data }) {
                                 {
                                     text: 'Sim',
                                     onPress: () => {
-                                        console.log('deletado' + id)
+                                        handleDelete(id)
                                     }
                                 }
                             ]

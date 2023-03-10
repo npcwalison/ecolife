@@ -29,6 +29,22 @@ export default function Home() {
 
     const [dateMovements, setDateMovements] = useState(new Date())
 
+
+    async function handleDelete(id){
+        //console.log('deletado com sucesso' + id)
+        try{
+            await api.delete('/receives/delete', {
+                params: {
+                    item_id: id
+                }
+            })
+
+            setDateMovements(new Date())
+        }catch(err){
+            console.log(`erro delete: ${err}`)
+        }
+    }
+
     useEffect(()=>{
         let isActive = true;
 
@@ -61,7 +77,7 @@ export default function Home() {
 
         return () => isActive = false;
 
-    }, [isFocused])
+    }, [isFocused, dateMovements])
 
     return (
         <Container>
@@ -86,7 +102,7 @@ export default function Home() {
             <List
                 data={moviments}
                 keyExtractor={ item => item.id }
-                renderItem={({item})=> <StoryList data={item}/>}
+                renderItem={({item})=> <StoryList data={item} handleDelete={handleDelete}/>}
                 showsVerticalScrollIndicator={false}
             />
 
