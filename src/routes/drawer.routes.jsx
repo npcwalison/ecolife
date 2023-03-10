@@ -21,7 +21,7 @@ export default function DrawerRoutes() {
                 drawerActiveBackgroundColor: "#f15104",
                 drawerActiveTintColor: "#fff",
 
-                drawerInactiveBackgroundColor: "#353566",
+                //drawerInactiveBackgroundColor: "#353566",
                 drawerInactiveTintColor: "#fff"
             }}
         >

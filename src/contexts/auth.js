@@ -8,6 +8,9 @@ import { useNavigation } from "@react-navigation/native";
 import api from '../services/api';
 
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { Keyboard } from 'react-native';
+
+import { format } from 'date-fns';
 
 function AuthProvider({ children }){
     const [user, setUser] = useState(null);
@@ -102,17 +105,25 @@ function AuthProvider({ children }){
         }
     }
     
-
+//---------------------------------------------------------------
     async function signOut(){
         await AsyncStorage.clear()
         .then(()=>{
             setUser(null)
         })
     }
+//---------------------------------------------------------------
 
+    async function register(labelInput, valueInput, type){
+        //console.log(labelInput, valueInput, type)
+        Keyboard.dismiss();
 
-    async function register(labelInput, valueInput){
-        console.log(labelInput, valueInput)
+        await api.post('/receive', {
+            description: labelInput,
+            value: Number(valueInput),
+            type: type,
+            date: format(new Date(), 'dd/MM/yyyy')
+        })
     }
 
     return(
