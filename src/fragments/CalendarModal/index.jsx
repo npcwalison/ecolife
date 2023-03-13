@@ -9,16 +9,20 @@ import {
 } from './styles';
 
 import { Calendar, LocaleConfig } from 'react-native-calendars';
+import {ptBR} from './localeCalendar';
+
+LocaleConfig.locales['pt-br'] = ptBR;
+LocaleConfig.defaultLocale = 'pt-br';
 
 
 
-export default function CalendarModal({setVisible}){
+export default function CalendarModal({setVisible, handleFilter}){
     const [dateNow, setDateNow] = useState(new Date())
     const [markeddates, setMarkedDates] = useState({})
 
 
     function handleOnDayPress(date){
-        console.log(markeddates)
+        //console.log(markeddates)
 
         setDateNow(new Date(date.dateString))
 
@@ -35,6 +39,10 @@ export default function CalendarModal({setVisible}){
         setMarkedDates(markedDay)
     }
 
+    function handleFilterDate(){
+        handleFilter(dateNow);
+        setVisible();
+    }
 
     return(
         <ModalContainer>
@@ -56,7 +64,7 @@ export default function CalendarModal({setVisible}){
                     }}
                 />
 
-                <ButtonFilter>
+                <ButtonFilter onPress={handleFilterDate}>
                     <ButtonFulterText>Filtrar</ButtonFulterText>
                 </ButtonFilter>
             </ModalContent>

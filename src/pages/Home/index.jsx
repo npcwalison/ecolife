@@ -83,6 +83,11 @@ export default function Home() {
 
     }, [isFocused, dateMovements])
 
+    function filterDateMoviments(dateSelected){
+        //console.log(dateSelected)
+        setDateMovements(dateSelected)
+    }
+
 
     return (
         <Container>
@@ -116,7 +121,10 @@ export default function Home() {
                 animationType="fade"
                 transparent={true}
             >
-                <CalendarModal setVisible={ ()=> setModalVisible(false)}/>
+                <CalendarModal
+                    setVisible={ ()=> setModalVisible(false)}
+                    handleFilter={filterDateMoviments}
+                />
             </Modal>
 
         </Container>
