@@ -16,3 +16,12 @@ Iniciando servidor local
 Intalando calendartio react native
 ```yarn add react-native-calendars```
 Outra biblioteca usada é o react navigation (stack/drawer) navigation
+
+### Imagens do projeto
+
+<img alt="" width="250" src="./images-project/image (1).jpeg">
+<img alt="" width="250" src="./images-project/image (2).jpeg">
+<img alt="" width="250" src="./images-project/image (3).jpeg">
+<img alt="" width="250" src="./images-project/image (4).jpeg">
+<img alt="" width="250" src="./images-project/image (5).jpeg">
+<img alt="" width="250" src="./images-project/image (6).jpeg">
