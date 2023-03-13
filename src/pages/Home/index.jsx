@@ -7,10 +7,12 @@ import {
     List
 } from './styles';
 import { format } from 'date-fns';
+import { Modal } from 'react-native';
 
 import Header from '../../fragments/Header';
 import Card from '../../fragments/Card';
 import StoryList from '../../fragments/StoryList';
+import CalendarModal from '../../fragments/CalendarModal';
 
 import { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../contexts/auth';
@@ -26,6 +28,8 @@ export default function Home() {
     const [listBalance, setListBalance] = useState([])
 
     const [moviments, setMoviments] = useState([])
+
+    const [ modalVisible, setModalVisible] = useState(false)
 
     const [dateMovements, setDateMovements] = useState(new Date())
 
@@ -79,6 +83,7 @@ export default function Home() {
 
     }, [isFocused, dateMovements])
 
+
     return (
         <Container>
 
@@ -94,8 +99,8 @@ export default function Home() {
 
             <Area>
                 <Title>Ultimas movimantações</Title>
-                <TouchableOpacity>
-                    <Icon name="list" color="#fff" size={30}/>
+                <TouchableOpacity onPress={ () => setModalVisible(true)}>
+                    <Icon name="calendar" color="#fff" size={30}/>
                 </TouchableOpacity>
             </Area>
 
@@ -105,6 +110,14 @@ export default function Home() {
                 renderItem={({item})=> <StoryList data={item} handleDelete={handleDelete}/>}
                 showsVerticalScrollIndicator={false}
             />
+
+            <Modal
+                visible={modalVisible}
+                animationType="fade"
+                transparent={true}
+            >
+                <CalendarModal setVisible={ ()=> setModalVisible(false)}/>
+            </Modal>
 
         </Container>
     )

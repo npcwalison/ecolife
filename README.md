@@ -6,3 +6,7 @@ Iniciando emulador:
 
 
 yarn add react-native-linear-gradient
+
+
+
+npx prisma migrate dev
