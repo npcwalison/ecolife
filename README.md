@@ -18,10 +18,15 @@ Intalando calendartio react native
 Outra biblioteca usada é o react navigation (stack/drawer) navigation
 
 ### Imagens do projeto
-
-<img alt="" width="250" src="./images-project/image (1).jpeg">
-<img alt="" width="250" src="./images-project/image (2).jpeg">
-<img alt="" width="250" src="./images-project/image (3).jpeg">
-<img alt="" width="250" src="./images-project/image (4).jpeg">
+<p>tela de login</P>
 <img alt="" width="250" src="./images-project/image (5).jpeg">
+<p>tela de criar cadastro</P>
 <img alt="" width="250" src="./images-project/image (6).jpeg">
+<p>tela principal do aplicativo</P>
+<img alt="" width="250" src="./images-project/image (4).jpeg">
+<p>registro de movimentações, despesas e ganhos</P>
+<img alt="" width="250" src="./images-project/image (1).jpeg">
+<p>logout da conta do aplicativo</P>
+<img alt="" width="250" src="./images-project/image (2).jpeg">
+<p>menu do aplicativo</P>
+<img alt="" width="250" src="./images-project/image (3).jpeg">
