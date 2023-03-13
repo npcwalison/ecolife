@@ -10,3 +10,5 @@ yarn add react-native-linear-gradient
 
 
 npx prisma migrate dev
+
+yarn add react-native-calendars
