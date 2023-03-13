@@ -2,6 +2,8 @@
 
 Projeto feito para estudo de funcionalidades de um aplicativo para controle financeiro, contendo filtro de dados usando data e autenticação de usuario em cunjunto com react navigation.
 
+- Antes de iniciar o projeto é praciso usar o ```yarn -i``` no projeto e dentro da pasta backend, caso haja algum erro, tente instalar as bibliotecas de forma manual, pode ser que o ```yarn -i``` não instale tudo.
+
 
 Caminho para emulador android no windows:
 ```~\AppData\Local\Android\Sdk\emulator```
