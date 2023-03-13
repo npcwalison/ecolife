@@ -18,7 +18,7 @@ export default function CalendarModal({setVisible}){
 
 
     function handleOnDayPress(date){
-        console.log(setMarkedDates)
+        console.log(markeddates)
 
         setDateNow(new Date(date.dateString))
 
@@ -47,7 +47,7 @@ export default function CalendarModal({setVisible}){
 
                 <Calendar
                     onDayPress={handleOnDayPress}
-                    markedDate={markeddates}
+                    markedDates={markeddates}
                     enableSwipeMonths={true}
                     theme={{
                         todayTextColor: '#ff0000',
